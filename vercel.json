@@ -2,25 +2,28 @@
   "version": 2,
   "public": true,
   "builds": [
-    {
-      "src": "src/features/**/*.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "src/features/**/*.css",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "src/features/**/*.js",
-      "use": "@vercel/static"
-    }
+    { "src": "src/modules/**/*", "use": "@vercel/static" },
+    { "src": "src/shared/**/*", "use": "@vercel/static" },
+    { "src": "public/**/*", "use": "@vercel/static" }
   ],
   "routes": [
-    { "src": "/", "dest": "/src/features/landing/index.html" },
+    { "src": "/", "dest": "/src/modules/landing/index.html" },
     {
       "src": "/privacy-policy",
-      "dest": "/src/features/privacy-policy/index.html"
+      "dest": "/src/modules/privacy-policy/index.html"
     },
-    { "src": "/support", "dest": "/src/features/support/index.html" }
+    { "src": "/support", "dest": "/src/modules/support/index.html" },
+    {
+      "src": "/public/(.*)",
+      "dest": "/public/$1"
+    },
+    {
+      "src": "/src/shared/(.*)",
+      "dest": "/src/shared/$1"
+    },
+    {
+      "src": "/src/modules/(.*)",
+      "dest": "/src/modules/$1"
+    }
   ]
 }
