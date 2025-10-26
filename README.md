@@ -48,6 +48,8 @@ iot-land-landing-page/
 
 ### 1. **Thêm trang mới**
 
+#### Không khuyên dùng vì đã cấu hình sẵn
+
 - Tạo folder trong `src/modules/[tên-trang]/`
 - Tạo 3 file: `index.html`, `style.css`, `main.js`
 - Thêm route trong `vercel.json`:
