@@ -32,10 +32,12 @@ iot-land-landing-page/
 
 ### Chạy local
 
+#### Tải vercel để chạy sever chuẩn với deploy version nhất
 ```bash
-# Mở file HTML trực tiếp trong trình duyệt
-# Hoặc dùng Live Server (VS Code extension)
+npm install -g vercel
+vercel dev
 ```
+Mặc định khi run sẽ là cổng **3000**
 
 ### Deploy lên Vercel
 
