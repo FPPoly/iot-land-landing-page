@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "public": true,
+  "builds": [
+    {
+      "src": "src/features/**/*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "src/features/**/*.css",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "src/features/**/*.js",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    { "src": "/", "dest": "/src/features/landing/index.html" },
+    {
+      "src": "/privacy-policy",
+      "dest": "/src/features/privacy-policy/index.html"
+    },
+    { "src": "/support", "dest": "/src/features/support/index.html" }
+  ]
+}
