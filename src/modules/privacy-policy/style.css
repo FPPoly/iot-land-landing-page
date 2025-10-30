@@ -14,35 +14,41 @@
   --policy-radius-sm: 12px;
 }
 
+/* Override body styles chỉ cho privacy page */
 body.privacy-page {
   background: linear-gradient(160deg, var(--policy-bg) 0%, var(--policy-bg-alt) 100%);
   color: var(--policy-text);
   min-height: 100vh;
-  margin: 0;
   font-family: "BeVietnamPro", sans-serif;
   font-size: 16px;
   line-height: 1.7;
   letter-spacing: 0.01em;
-  display: flex;
-  align-items: stretch;
+  /* Không dùng flex ở body nữa */
+  padding-top: 80px; /* Để tránh header che */
 }
 
-body.privacy-page header {
-  background: none;
-  color: inherit;
-  padding: 0;
-  text-align: left;
+/* Override header trong privacy page */
+body.privacy-page .main-header {
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
+body.privacy-page .main-header .logo,
+body.privacy-page .main-header .nav-links a {
+  color: #0a244d;
+}
+
+/* Override main trong privacy page */
 body.privacy-page main {
   padding: 0;
+  margin-top: 0;
 }
 
 .page-shell {
   position: relative;
   max-width: 920px;
-  margin: 48px auto 80px;
-  padding: 0 24px;
+  margin: 0 auto 80px;
+  padding: 48px 24px;
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -328,11 +334,17 @@ body.privacy-page main {
 
 @media (min-width: 768px) {
   .page-shell {
-    padding: 0 32px;
+    padding: 48px 32px 80px;
   }
 
   .footer-link {
     min-width: 210px;
     padding: 12px 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  body.privacy-page {
+    padding-top: 70px;
   }
 }
