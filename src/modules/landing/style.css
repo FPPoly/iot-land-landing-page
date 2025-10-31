@@ -1,28 +1,7 @@
-/* --- 1. Cài đặt Chung & Biến Màu (TỪ CSS MỚI) --- */
-:root {
-  --policy-bg: #f4eddf;
-  --policy-bg-alt: #e2f4df;
-  --policy-surface: #fffdf7;
-  --policy-border: rgba(184, 164, 116, 0.55);
-  --policy-text: #2f2a24;
-  --policy-muted: #6c6457;
-  --policy-accent: #4f7c4f;
-  --policy-accent-strong: #3f6a43;
-  --policy-footer-bg: rgba(121, 149, 99, 0.18);
-  --policy-footer-border: rgba(114, 150, 91, 0.4);
-  --policy-radius-lg: 24px;
-  --policy-radius-md: 16px;
-  --policy-radius-sm: 12px;
-}
-
+/* --- 1. Landing Page Styles --- */
 body {
-  /* Áp dụng nền gradient từ CSS mới */
-  background: linear-gradient(
-    160deg,
-    var(--policy-bg) 0%,
-    var(--policy-bg-alt) 100%
-  );
-  color: var(--policy-text);
+  background: var(--bg-cream);
+  color: var(--text-dark);
   min-height: 100vh;
   font-family: "BeVietnamPro", sans-serif;
   font-size: 16px;
@@ -37,8 +16,7 @@ h4,
 h5,
 h6 {
   font-weight: 700;
-  /* Áp dụng màu tiêu đề mới */
-  color: var(--policy-accent-strong);
+  color: var(--text-dark);
   letter-spacing: -0.01em;
 }
 
@@ -50,58 +28,40 @@ h6 {
 
 .section-subtitle {
   font-size: 1.125rem;
-  /* Áp dụng màu văn bản phụ mới */
-  color: var(--policy-muted);
+  color: var(--text-muted);
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 3rem;
 }
 
-/* --- 2. Nút bấm tùy chỉnh (THEO PHONG CÁCH MỚI) --- */
-.btn-accent {
-  background-color: var(--policy-accent);
-  border-color: var(--policy-accent);
-  color: #fff;
-  font-weight: 700;
+/* --- 2. Buttons --- */
+.btn-accent,
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+  font-weight: 600;
   padding: 0.75rem 1.5rem;
   transition: all 0.3s ease;
-  border-radius: 999px; /* bo tròn */
+  border-radius: var(--radius-xs);
   text-decoration: none;
 }
 
-.btn-accent:hover {
-  background-color: var(--policy-accent-strong);
-  border-color: var(--policy-accent-strong);
-  color: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(79, 124, 79, 0.3);
-  text-decoration: none;
-}
-
-.btn-primary {
-  background-color: var(--policy-accent);
-  border-color: var(--policy-accent);
-  color: #fff;
-  font-weight: 700;
-  padding: 0.75rem 1.5rem;
-  border-radius: 999px;
-  text-decoration: none;
-}
-
+.btn-accent:hover,
 .btn-primary:hover {
-  background-color: var(--policy-accent-strong);
-  border-color: var(--policy-accent-strong);
-  color: #fff;
-  text-decoration: none;
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px var(--shadow-active);
 }
 
-/* --- 3. Header (THEO PHONG CÁCH MỚI) --- */
+/* --- 3. Header --- */
 .navbar {
-  /* Sử dụng phong cách thẻ từ CSS mới */
-  background: rgba(255, 255, 255, 0.86);
-  border-bottom: 1px solid var(--policy-border);
-  box-shadow: 0 10px 30px rgba(96, 115, 88, 0.1);
+  background-color: var(--bg-light);
+  border-bottom: 1px solid var(--border-light);
+  box-shadow: 0 2px 10px var(--shadow-primary);
 }
 
 .navbar-brand img {
@@ -110,22 +70,25 @@ h6 {
 
 .navbar .nav-link {
   font-weight: 500;
-  color: var(--policy-text);
+  color: var(--text-dark);
+  transition: color 0.3s ease;
 }
 
 .navbar .nav-link.active,
 .navbar .nav-link:hover {
-  color: var(--policy-accent);
+  color: var(--primary-color);
 }
 
 .navbar .btn-outline-dark {
-  border-color: var(--policy-accent);
-  color: var(--policy-accent);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
   font-weight: 600;
-  border-radius: 999px;
+  border-radius: var(--radius-xs);
+  transition: all 0.3s ease;
 }
 .navbar .btn-outline-dark:hover {
-  background-color: var(--policy-accent);
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
   color: #fff;
 }
 
@@ -144,22 +107,145 @@ h6 {
 
 .hero-subheadline {
   font-size: 1.2rem;
-  color: var(--policy-muted);
+  color: var(--text-muted);
   margin-bottom: 2.5rem;
   max-width: 500px;
 }
 
 .hero-image {
-  border-radius: var(--policy-radius-lg); /* Bo góc mới */
-  box-shadow: 0 15px 30px rgba(96, 115, 88, 0.18); /* Đổ bóng mới */
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 30px var(--shadow-primary);
 }
 
-/* --- 5. Thẻ (Cards) - Áp dụng phong cách .surface-card --- */
+/* --- Dashboard Slider Styles --- */
+.dashboard-slider-container {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 10px 30px var(--shadow-primary);
+  background: linear-gradient(135deg, var(--bg-warm) 0%, var(--bg-sand) 100%);
+}
+
+.dashboardSwiper {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3; /* Tỉ lệ cố định 4:3 */
+}
+
+.dashboardSwiper .swiper-slide {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--bg-warm) 0%, var(--bg-sand) 100%);
+}
+
+.dashboardSwiper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain; /* Hiển thị đủ ảnh, không cắt */
+  object-position: center; /* Căn giữa ảnh */
+  border-radius: var(--radius-md);
+}
+
+/* Slide Caption */
+.slide-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(90, 70, 51, 0.9), transparent);
+  color: white;
+  padding: 1.5rem 1rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  border-bottom-left-radius: var(--radius-md);
+  border-bottom-right-radius: var(--radius-md);
+}
+
+/* Navigation Buttons */
+.dashboardSwiper .swiper-button-next,
+.dashboardSwiper .swiper-button-prev {
+  color: var(--primary-color);
+  background: rgba(255, 255, 255, 0.9);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.dashboardSwiper .swiper-button-next:after,
+.dashboardSwiper .swiper-button-prev:after {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.dashboardSwiper .swiper-button-next:hover,
+.dashboardSwiper .swiper-button-prev:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: scale(1.1);
+}
+
+/* Pagination */
+.dashboardSwiper .swiper-pagination {
+  bottom: 10px;
+}
+
+.dashboardSwiper .swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.7);
+  opacity: 1;
+  width: 10px;
+  height: 10px;
+  transition: all 0.3s ease;
+}
+
+.dashboardSwiper .swiper-pagination-bullet-active {
+  background: var(--primary-color);
+  width: 24px;
+  border-radius: 5px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .dashboardSwiper {
+    aspect-ratio: 16 / 10; /* Tỉ lệ rộng hơn cho tablet */
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboardSwiper {
+    aspect-ratio: 16 / 11; /* Tỉ lệ cho mobile */
+  }
+  
+  .dashboardSwiper .swiper-button-next,
+  .dashboardSwiper .swiper-button-prev {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .dashboardSwiper .swiper-button-next:after,
+  .dashboardSwiper .swiper-button-prev:after {
+    font-size: 16px;
+  }
+  
+  .slide-caption {
+    font-size: 0.9rem;
+    padding: 1rem 0.75rem 0.75rem;
+  }
+}
+
+/* --- 5. Cards --- */
 .surface-card {
-  background: rgba(255, 255, 255, 0.86);
-  border-radius: var(--policy-radius-lg);
-  border: 1px solid rgba(184, 164, 116, 0.45);
-  box-shadow: 0 20px 50px rgba(96, 115, 88, 0.18);
+  background: var(--bg-light);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  box-shadow: 0 8px 20px var(--shadow-primary);
   padding: 2.5rem;
   box-sizing: border-box;
   height: 100%;
@@ -167,7 +253,7 @@ h6 {
 }
 .surface-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 25px 55px rgba(96, 115, 88, 0.25);
+  box-shadow: 0 12px 30px var(--shadow-primary);
 }
 
 /* --- 5. How it Works --- */
@@ -177,11 +263,10 @@ h6 {
 }
 
 .step-card {
-  /* Kế thừa từ .surface-card */
-  background: var(--policy-surface);
-  border-radius: var(--policy-radius-lg);
-  border: 1px solid var(--policy-border);
-  box-shadow: 0 20px 50px rgba(96, 115, 88, 0.18);
+  background: var(--bg-light);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  box-shadow: 0 8px 20px var(--shadow-primary);
   padding: 2rem;
   text-align: center;
   transition: all 0.3s ease;
@@ -190,12 +275,12 @@ h6 {
 
 .step-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 12px 30px var(--shadow-primary);
 }
 
 .step-icon {
   font-size: 3rem;
-  color: var(--policy-accent);
+  color: var(--primary-color);
   margin-bottom: 1.5rem;
 }
 
@@ -205,11 +290,10 @@ h6 {
 }
 
 .feature-card {
-  /* Kế thừa từ .surface-card */
-  background: var(--policy-surface);
-  border-radius: var(--policy-radius-lg);
-  border: 1px solid var(--policy-border);
-  box-shadow: 0 20px 50px rgba(96, 115, 88, 0.18);
+  background: var(--bg-light);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  box-shadow: 0 8px 20px var(--shadow-primary);
   text-align: left;
   padding: 2rem;
   height: 100%;
@@ -218,77 +302,39 @@ h6 {
 
 .feature-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 12px 30px var(--shadow-primary);
 }
 
 .feature-icon {
   font-size: 2.5rem;
-  color: var(--policy-accent);
+  color: var(--primary-color);
   margin-bottom: 1.5rem;
 }
 
-/* --- 7. CTA Banner (THEO PHONG CÁCH MỚI) --- */
+/* --- 7. CTA Banner --- */
 .cta-section {
   padding: 5rem 0;
-  /* Áp dụng phong cách footer từ CSS mới */
-  background: var(--policy-footer-bg);
-  border-top: 1px solid var(--policy-footer-border);
-  border-bottom: 1px solid var(--policy-footer-border);
-  color: var(--policy-text);
+  background: var(--bg-warm);
+  border-top: 2px solid var(--border-light);
+  border-bottom: 2px solid var(--border-light);
+  color: var(--text-dark);
   text-align: center;
 }
 
 .cta-section h2 {
-  color: var(--policy-accent-strong);
+  color: var(--text-dark);
 }
 
 .cta-section p {
-  color: var(--policy-muted);
+  color: var(--text-muted);
   font-size: 1.1rem;
 }
 
 .cta-section .btn-accent {
-  /* Làm nút nổi bật hơn */
-  background-color: var(--policy-accent-strong);
-  border-color: var(--policy-accent-strong);
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
 }
 .cta-section .btn-accent:hover {
-  background-color: var(--policy-accent);
-  border-color: var(--policy-accent);
-}
-
-/* --- 8. Footer (THEO PHONG CÁCH MỚI) --- */
-.footer {
-  padding: 4rem 0 2rem;
-  background-color: transparent; /* Nền body đã có gradient */
-  border-top: 1px solid var(--policy-border);
-}
-
-.footer-brand p {
-  color: var(--policy-muted);
-  max-width: 300px;
-  margin-top: 1rem;
-}
-
-.footer h5 {
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: var(--policy-accent-strong);
-}
-
-.footer .nav-link {
-  padding: 0.25rem 0;
-  color: var(--policy-muted);
-  text-decoration: none;
-}
-
-.footer .nav-link:hover {
-  color: var(--policy-accent);
-}
-
-.footer-bottom {
-  border-top: 1px solid var(--policy-border);
-  padding-top: 2rem;
-  margin-top: 2rem;
-  color: var(--policy-muted);
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
 }

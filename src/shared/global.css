@@ -1,5 +1,86 @@
 @import "/public/assets/fonts/fonts.css";
 
+/* ==================== CSS Variables ==================== */
+:root {
+  /* Primary Colors */
+  --primary-color: #d49a6a;
+  --primary-dark: #b87449;
+  --primary-light: #e0a978;
+  --primary-lighter: #c38f6d;
+
+  /* Background Colors */
+  --bg-light: #fffdf9;
+  --bg-warm: #fff7ef;
+  --bg-cream: #f9eee3;
+  --bg-peach: #ffe6d0;
+  --bg-sand: #fff3e0;
+  --bg-pale: #fff9f5;
+  --bg-soft: #fff4e7;
+  --bg-amber: #ffedd7;
+  --bg-golden: #fff9f3;
+
+  /* Text Colors */
+  --text-dark: #5a4633;
+  --text-primary: #2b2b2b;
+  --text-muted: #666;
+  --text-placeholder: #a88f7a;
+  --text-gray: #8c7b6b;
+  --text-faded: #a68a72;
+
+  /* Border Colors */
+  --border-light: #e0c9a8;
+  --border-tan: #d7b899;
+  --border-warm: #e6c4a8;
+
+  /* Green Colors */
+  --green-primary: #4ca26b;
+  --green-dark: #3b7a57;
+  --green-darker: #2e593f;
+  --green-light: #6dcf77;
+  --green-bright: #6dbf4b;
+  --green-success: #4caf50;
+  --green-success-dark: #388e3c;
+
+  /* Action Button Colors */
+  --btn-edit-bg: rgba(184, 116, 73, 0.1);
+  --btn-edit-bg-hover: rgba(184, 116, 73, 0.2);
+  --btn-edit-bg-active: rgba(184, 116, 73, 0.3);
+  --btn-edit-color: #b87449;
+
+  --btn-detail-bg: rgba(76, 175, 80, 0.1);
+  --btn-detail-bg-hover: rgba(76, 175, 80, 0.2);
+  --btn-detail-bg-active: rgba(76, 175, 80, 0.3);
+  --btn-detail-color: #4caf50;
+
+  --btn-delete-bg: rgba(212, 85, 57, 0.1);
+  --btn-delete-bg-hover: rgba(212, 85, 57, 0.2);
+  --btn-delete-bg-active: rgba(212, 85, 57, 0.3);
+  --btn-delete-color: #d45539;
+
+  /* Secondary Button Colors */
+  --btn-secondary-bg: #ebd2b0;
+  --btn-secondary-hover: #d6b087;
+
+  /* Blue Colors */
+  --blue-primary: #4ea1f2;
+  --blue-dark: #3b8cd8;
+
+  /* Box Shadow Colors */
+  --shadow-primary: rgba(90, 70, 51, 0.15);
+  --shadow-edit: rgba(184, 116, 73, 0.3);
+  --shadow-detail: rgba(76, 175, 80, 0.3);
+  --shadow-delete: rgba(212, 85, 57, 0.3);
+  --shadow-active: rgba(212, 154, 106, 0.6);
+  --shadow-green: rgba(59, 122, 87, 0.2);
+  --shadow-focus: rgba(76, 162, 107, 0.25);
+
+  /* Border Radius */
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+  --radius-xs: 8px;
+}
+
 /* ===== Global Reset ===== */
 * {
   margin: 0;
@@ -9,9 +90,9 @@
 
 /* ===== Body & Base Styles ===== */
 body {
-  font-family: "BeVietnamPro", "Poppins", Arial, sans-serif;
-  color: #222;
-  background-color: #f8fafc;
+  font-family: "BeVietnamPro", Arial, sans-serif;
+  color: var(--text-dark);
+  background-color: var(--bg-cream);
   line-height: 1.6;
 }
 
@@ -22,8 +103,9 @@ a {
 
 /* ===== Header Styles ===== */
 .main-header {
-  background: white;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  background: var(--bg-light);
+  box-shadow: 0 2px 10px var(--shadow-primary);
+  border-bottom: 1px solid var(--border-light);
   position: fixed;
   width: 100%;
   top: 0;
@@ -32,7 +114,8 @@ a {
 }
 
 .main-header.sticky {
-  background-color: #0a244d;
+  background-color: var(--primary-color);
+  border-bottom-color: var(--primary-dark);
   color: white;
 }
 
@@ -48,7 +131,8 @@ a {
 .logo {
   font-weight: bold;
   font-size: 1.4rem;
-  color: #0a244d;
+  color: var(--text-dark);
+  transition: color 0.3s ease;
 }
 
 .main-header.sticky .logo {
@@ -63,12 +147,12 @@ a {
 
 .nav-links a {
   font-weight: 500;
-  color: #0a244d;
-  transition: color 0.3s;
+  color: var(--text-dark);
+  transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #007bff;
+  color: var(--primary-color);
 }
 
 .main-header.sticky .nav-links a {
@@ -76,7 +160,7 @@ a {
 }
 
 .main-header.sticky .nav-links a:hover {
-  color: #64b5f6;
+  color: var(--primary-light);
 }
 
 /* Mobile Menu Toggle */
@@ -86,7 +170,8 @@ a {
   font-size: 1.8rem;
   border: none;
   cursor: pointer;
-  color: #0a244d;
+  color: var(--text-dark);
+  transition: color 0.3s ease;
 }
 
 .main-header.sticky .menu-toggle {
@@ -101,10 +186,11 @@ main {
 
 /* ===== Footer Styles ===== */
 .main-footer {
-  background: #11141a;
-  color: #c9c9c9;
+  background: var(--text-dark);
+  color: var(--bg-light);
   padding: 60px 5%;
   font-size: 0.9rem;
+  border-top: 3px solid var(--primary-color);
 }
 
 .footer-grid {
@@ -112,21 +198,21 @@ main {
   grid-template-columns: 2fr repeat(3, 1fr);
   gap: 40px;
   padding-bottom: 40px;
-  border-bottom: 1px solid #2a2e38;
+  border-bottom: 1px solid var(--border-warm);
 }
 
 .footer-info .logo {
-  color: white;
+  color: var(--primary-light);
   font-size: 1.4rem;
   margin-bottom: 20px;
 }
 
 .footer-info p {
-  color: #9aa0a6;
+  color: var(--text-gray);
 }
 
 .footer-links h4 {
-  color: white;
+  color: var(--primary-light);
   font-size: 1.15rem;
   font-weight: 700;
   margin-bottom: 25px;
@@ -141,24 +227,24 @@ main {
 }
 
 .footer-links a {
-  color: #c9c9c9;
-  transition: color 0.3s, text-decoration 0.3s;
+  color: var(--text-muted);
+  transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
 .footer-links a:hover {
-  color: #007bff;
+  color: var(--primary-color);
   text-decoration: underline;
 }
 
 .footer-bottom {
   text-align: center;
   padding-top: 25px;
-  color: #6c7383;
+  color: var(--text-gray);
   font-size: 0.85rem;
 }
 
 .main-footer .logo-icon {
-  color: #007bff;
+  color: var(--primary-color);
   margin-right: 8px;
 }
 
@@ -192,4 +278,41 @@ main {
   main {
     padding: 1rem;
   }
+}
+
+/* --- 8. Footer --- */
+.footer {
+  padding: 4rem 0 2rem;
+  background-color: var(--bg-light);
+  border-top: 2px solid var(--border-light);
+}
+
+.footer-brand p {
+  color: var(--text-muted);
+  max-width: 300px;
+  margin-top: 1rem;
+}
+
+.footer h5 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+.footer .nav-link {
+  padding: 0.25rem 0;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer .nav-link:hover {
+  color: var(--primary-color);
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--border-light);
+  padding-top: 2rem;
+  margin-top: 2rem;
+  color: var(--text-muted);
 }

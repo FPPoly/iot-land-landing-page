@@ -4,6 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hỗ trợ khách hàng</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="/src/shared/global.css" />
     <link rel="stylesheet" href="/src/modules/support/style.css" />
   </head>
@@ -14,7 +24,12 @@
       <section class="contact-panel">
         <!-- Header section with icon and title to guide users -->
         <div class="contact-header">
-          <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" aria-hidden="true">
+          <svg
+            class="contact-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 640 640"
+            aria-hidden="true"
+          >
             <path
               d="M112 128C85.5 128 64 149.5 64 176C64 191.1 71.1 205.3 83.2 214.4L291.2 370.4C308.3 383.2 331.7 383.2 348.8 370.4L556.8 214.4C568.9 205.3 576 191.1 576 176C576 149.5 554.5 128 528 128L112 128zM64 260L64 448C64 483.3 92.7 512 128 512L512 512C547.3 512 576 483.3 576 448L576 260L377.6 408.8C343.5 434.4 296.5 434.4 262.4 408.8L64 260z"
             />
@@ -59,8 +74,12 @@
           <div class="form-actions">
             <button type="submit" class="submit-button">
               Gửi
-              <span class="icon-send" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+              <span class="icon-send" aria-hidden="true" style="color: #ffff">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 640 640"
+                  style="fill: #ffff"
+                >
                   <path
                     d="M568.4 37.7C578.2 34.2 589 36.7 596.4 44C603.8 51.3 606.2 62.2 602.7 72L424.7 568.9C419.7 582.8 406.6 592 391.9 592C377.7 592 364.9 583.4 359.6 570.3L295.4 412.3C290.9 401.3 292.9 388.7 300.6 379.7L395.1 267.3C400.2 261.2 399.8 252.3 394.2 246.7C388.6 241.1 379.6 240.7 373.6 245.8L261.2 340.1C252.1 347.7 239.6 349.7 228.6 345.3L70.1 280.8C57 275.5 48.4 262.7 48.4 248.5C48.4 233.8 57.6 220.7 71.5 215.7L568.4 37.7z"
                   />
@@ -71,7 +90,88 @@
         </form>
       </section>
     </main>
-    <footer class="main-footer"></footer>
+    <footer class="footer">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4 footer-brand">
+            <img
+              src="/public/assets/images/iot-logo.png"
+              alt="IoT Land Logo"
+              height="40"
+            />
+            <p>
+              Giải pháp Nông nghiệp Thông minh, xây dựng trên Spring Boot,
+              Bootstrap 5 và MyBatis.
+            </p>
+          </div>
+          <div class="col-lg-2 col-md-4 col-6">
+            <h5>Sản phẩm</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2">
+                <a href="#features" class="nav-link">Tính năng</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="#how-it-works" class="nav-link">Cách hoạt động</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link">Bảo mật</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4 col-6">
+            <h5>Công ty</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link">Về chúng tôi</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link">Sự nghiệp</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link">Liên hệ</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4 col-6">
+            <h5>Tài nguyên</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2">
+                <a href="/support" class="nav-link">Hỗ trợ</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="/privacy-policy" class="nav-link">Chính sách</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link">FAQs</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4 col-6">
+            <img
+              src="/public/assets/images/fpt-logo.png"
+              alt="FPT Logo"
+              height="40"
+            />
+          </div>
+        </div>
+        <div
+          class="d-flex justify-content-between footer-bottom align-items-center"
+        >
+          <p>© 2024 IoT Land. All rights reserved.</p>
+          <div>
+            <a href="#" class="nav-link d-inline-block p-2"
+              ><i class="bi bi-twitter-x"></i
+            ></a>
+            <a href="#" class="nav-link d-inline-block p-2"
+              ><i class="bi bi-facebook"></i
+            ></a>
+            <a href="#" class="nav-link d-inline-block p-2"
+              ><i class="bi bi-linkedin"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <script src="/src/shared/utils.js"></script>
 

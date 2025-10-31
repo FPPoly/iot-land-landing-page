@@ -4,18 +4,18 @@
   align-items: center;
   justify-content: center;
   padding: 3rem 1.5rem 4rem;
-  background: radial-gradient(circle at top, #f8e5c9 0%, #e6b984 55%, #d18b4c 100%);
+  background: var(--bg-cream);
 }
 
 .contact-panel {
   width: 100%;
   max-width: 720px;
-  background-color: rgba(255, 243, 227, 0.96);
-  border-radius: 20px;
+  background-color: var(--bg-light);
+  border-radius: var(--radius-md);
   padding: 2.25rem 2rem;
-  box-shadow: 0 12px 30px rgba(209, 139, 76, 0.22);
-  color: #4c2f1d;
-  border: 1px solid rgba(209, 139, 76, 0.25);
+  box-shadow: 0 8px 20px var(--shadow-primary);
+  color: var(--text-dark);
+  border: 1px solid var(--border-light);
 }
 
 .contact-header {
@@ -23,21 +23,21 @@
   align-items: center;
   gap: 0.75rem;
   margin-bottom: 1.5rem;
-  color: #4c2f1d;
+  color: var(--text-dark);
 }
 
 .contact-icon {
   width: 34px;
   height: 34px;
   flex-shrink: 0;
-  fill: #c7773a;
+  fill: var(--primary-color);
 }
 
 .icon-envelope svg,
 .icon-send svg {
   width: 25px;
   height: 25px;
-  fill: #c7773a;
+  fill: var(--primary-color);
 }
 
 .contact-header h2 {
@@ -66,29 +66,29 @@
 .form-label {
   font-size: 0.9rem;
   font-weight: 600;
-  color: rgba(108, 66, 36, 0.85);
+  color: var(--text-muted);
 }
 
 .form-input {
-  border: 1px solid rgba(209, 139, 76, 0.35);
-  border-radius: 12px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xs);
   padding: 0.85rem 1rem;
   min-height: 15px;
   font-size: 1rem;
   line-height: 1.4;
-  background-color: rgba(255, 239, 216, 0.95);
-  color: #4c2f1d;
+  background-color: var(--bg-sand);
+  color: var(--text-dark);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .form-input::placeholder {
-  color: rgba(156, 101, 57, 0.6);
+  color: var(--text-placeholder);
 }
 
 .form-input:focus {
   outline: none;
-  border-color: #d18b4c;
-  box-shadow: 0 0 0 3px rgba(209, 139, 76, 0.25);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px var(--shadow-focus);
 }
 
 .form-textarea {
@@ -111,23 +111,24 @@
   gap: 0.5rem;
   padding: 0 1.8rem;
   min-height: 45px;
-  border-radius: 12px;
+  border-radius: var(--radius-xs);
   border: none;
   font-size: 1rem;
   font-weight: 600;
-  background: linear-gradient(135deg, #f0b375, #f8c994);
-  color: rgba(108, 66, 36, 0.85);
+  background: var(--primary-color);
+  color: white;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
 .submit-button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 16px 30px rgba(240, 179, 117, 0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px var(--shadow-active);
+  background: var(--primary-dark);
 }
 
 .submit-button:active {
-  transform: translateY(1px);
+  transform: translateY(0);
 }
 
 @media (max-width: 640px) {
