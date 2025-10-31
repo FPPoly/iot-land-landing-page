@@ -211,16 +211,50 @@ h6 {
   border-radius: 5px;
 }
 
-/* Responsive */
+/* ===== Responsive Design ===== */
+
+/* Tablet */
 @media (max-width: 992px) {
   .dashboardSwiper {
-    aspect-ratio: 16 / 10; /* Tỉ lệ rộng hơn cho tablet */
+    aspect-ratio: 16 / 10;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-headline {
+    font-size: 2.5rem;
+  }
+
+  .hero-subheadline {
+    font-size: 1.1rem;
+  }
+
+  .surface-card,
+  .step-card,
+  .feature-card {
+    padding: 2rem;
+  }
+
+  .cta-section {
+    padding: 4rem 0;
   }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+
   .dashboardSwiper {
-    aspect-ratio: 16 / 11; /* Tỉ lệ cho mobile */
+    aspect-ratio: 16 / 11;
   }
   
   .dashboardSwiper .swiper-button-next,
@@ -237,6 +271,157 @@ h6 {
   .slide-caption {
     font-size: 0.9rem;
     padding: 1rem 0.75rem 0.75rem;
+  }
+
+  /* Hero section */
+  .hero-section {
+    padding: 3rem 0;
+  }
+
+  .hero-headline {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-subheadline {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Sections */
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+
+  .how-it-works-section,
+  .features-section {
+    padding: 3rem 0;
+  }
+
+  /* Cards */
+  .surface-card,
+  .step-card,
+  .feature-card {
+    padding: 1.5rem;
+  }
+
+  .step-icon,
+  .feature-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  /* CTA */
+  .cta-section {
+    padding: 3rem 0;
+  }
+
+  .cta-section h2 {
+    font-size: 1.75rem;
+  }
+
+  .cta-section p {
+    font-size: 1rem;
+  }
+
+  /* Buttons */
+  .btn-accent,
+  .btn-primary {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 3rem 0 1.5rem;
+  }
+
+  .footer h5 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-brand p {
+    font-size: 0.9rem;
+  }
+
+  .footer-bottom {
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .hero-section {
+    padding: 2rem 0;
+  }
+
+  .hero-headline {
+    font-size: 1.75rem;
+  }
+
+  .hero-subheadline {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .how-it-works-section,
+  .features-section {
+    padding: 2.5rem 0;
+  }
+
+  .surface-card,
+  .step-card,
+  .feature-card {
+    padding: 1.25rem;
+  }
+
+  .cta-section {
+    padding: 2.5rem 0;
+  }
+
+  .cta-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .btn-accent,
+  .btn-primary {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .dashboardSwiper .swiper-button-next,
+  .dashboardSwiper .swiper-button-prev {
+    width: 32px;
+    height: 32px;
+  }
+
+  .dashboardSwiper .swiper-button-next:after,
+  .dashboardSwiper .swiper-button-prev:after {
+    font-size: 14px;
+  }
+
+  .slide-caption {
+    font-size: 0.85rem;
+    padding: 0.75rem 0.5rem 0.5rem;
   }
 }
 

@@ -131,7 +131,46 @@
   transform: translateY(0);
 }
 
-@media (max-width: 640px) {
+/* ===== Responsive Design ===== */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .support-page {
+    padding: 2.75rem 1.5rem 3.5rem;
+  }
+
+  .contact-panel {
+    max-width: 640px;
+    padding: 2rem 1.75rem;
+  }
+
+  .contact-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .contact-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .form-label {
+    font-size: 0.85rem;
+  }
+
+  .form-input {
+    font-size: 0.95rem;
+    padding: 0.8rem 0.95rem;
+  }
+
+  .submit-button {
+    min-height: 42px;
+    font-size: 0.95rem;
+    padding: 0 1.6rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
   .support-page {
     padding: 2.5rem 1rem 3rem;
   }
@@ -140,9 +179,115 @@
     padding: 2rem 1.5rem;
   }
 
+  .contact-header {
+    gap: 0.65rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .contact-header h2 {
+    font-size: 1.35rem;
+  }
+
+  .contact-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .contact-form {
+    gap: 1rem;
+  }
+
+  .field-group {
+    gap: 0.4rem;
+  }
+
+  .form-label {
+    font-size: 0.85rem;
+  }
+
+  .form-input {
+    font-size: 0.9rem;
+    padding: 0.75rem 0.9rem;
+    min-height: 12px;
+  }
+
+  .form-textarea {
+    min-height: 100px;
+  }
+
+  .submit-button {
+    min-height: 40px;
+    font-size: 0.9rem;
+    padding: 0 1.5rem;
+  }
+
+  .icon-send svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .support-page {
+    padding: 2rem 0.75rem 2.5rem;
+  }
+
+  .contact-panel {
+    padding: 1.75rem 1.25rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .contact-header {
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .contact-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .contact-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .contact-form {
+    gap: 0.85rem;
+  }
+
+  .field-group {
+    gap: 0.35rem;
+  }
+
+  .form-label {
+    font-size: 0.8rem;
+  }
+
+  .form-input {
+    font-size: 0.85rem;
+    padding: 0.7rem 0.85rem;
+    border-radius: var(--radius-xs);
+  }
+
+  .form-textarea {
+    min-height: 90px;
+  }
+
+  .submit-button {
+    min-height: 38px;
+    font-size: 0.85rem;
+    padding: 0 1.25rem;
+    gap: 0.4rem;
+  }
+
+  .icon-send svg {
+    width: 14px;
+    height: 14px;
+  }
+
   .contact-form {
     grid-template-columns: 1fr;
-    gap: 1rem;
   }
 
   .form-actions {
