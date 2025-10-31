@@ -1,54 +1,294 @@
-.hero-section {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background: linear-gradient(135deg, #0a244d, #007bff);
-  color: white;
+/* --- 1. Cài đặt Chung & Biến Màu (TỪ CSS MỚI) --- */
+:root {
+  --policy-bg: #f4eddf;
+  --policy-bg-alt: #e2f4df;
+  --policy-surface: #fffdf7;
+  --policy-border: rgba(184, 164, 116, 0.55);
+  --policy-text: #2f2a24;
+  --policy-muted: #6c6457;
+  --policy-accent: #4f7c4f;
+  --policy-accent-strong: #3f6a43;
+  --policy-footer-bg: rgba(121, 149, 99, 0.18);
+  --policy-footer-border: rgba(114, 150, 91, 0.4);
+  --policy-radius-lg: 24px;
+  --policy-radius-md: 16px;
+  --policy-radius-sm: 12px;
 }
 
-.hero-section h1 {
-  font-size: 3rem;
+body {
+  /* Áp dụng nền gradient từ CSS mới */
+  background: linear-gradient(
+    160deg,
+    var(--policy-bg) 0%,
+    var(--policy-bg-alt) 100%
+  );
+  color: var(--policy-text);
+  min-height: 100vh;
+  font-family: "BeVietnamPro", sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  /* Áp dụng màu tiêu đề mới */
+  color: var(--policy-accent-strong);
+  letter-spacing: -0.01em;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
   margin-bottom: 1rem;
 }
 
-.hero-section h1 span {
-  color: #00ffb3;
+.section-subtitle {
+  font-size: 1.125rem;
+  /* Áp dụng màu văn bản phụ mới */
+  color: var(--policy-muted);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3rem;
 }
 
-.hero-section p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  opacity: 0.9;
+/* --- 2. Nút bấm tùy chỉnh (THEO PHONG CÁCH MỚI) --- */
+.btn-accent {
+  background-color: var(--policy-accent);
+  border-color: var(--policy-accent);
+  color: #fff;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.3s ease;
+  border-radius: 999px; /* bo tròn */
+  text-decoration: none;
+}
+
+.btn-accent:hover {
+  background-color: var(--policy-accent-strong);
+  border-color: var(--policy-accent-strong);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(79, 124, 79, 0.3);
+  text-decoration: none;
 }
 
 .btn-primary {
-  background: #00ffb3;
-  color: #0a244d;
-  padding: 0.8rem 1.5rem;
-  border-radius: 25px;
-  font-weight: 600;
-  transition: all 0.3s ease;
+  background-color: var(--policy-accent);
+  border-color: var(--policy-accent);
+  color: #fff;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  text-decoration: none;
 }
 
 .btn-primary:hover {
-  background: white;
-  color: #007bff;
-}
-.hero {
-  text-align: center;
-  padding: 100px 20px;
-  background: linear-gradient(to bottom right, #e8f0ff, #ffffff);
+  background-color: var(--policy-accent-strong);
+  border-color: var(--policy-accent-strong);
+  color: #fff;
+  text-decoration: none;
 }
 
-.hero h2 {
-  font-size: 2.5rem;
-  color: #102a43;
-  margin-bottom: 10px;
+/* --- 3. Header (THEO PHONG CÁCH MỚI) --- */
+.navbar {
+  /* Sử dụng phong cách thẻ từ CSS mới */
+  background: rgba(255, 255, 255, 0.86);
+  border-bottom: 1px solid var(--policy-border);
+  box-shadow: 0 10px 30px rgba(96, 115, 88, 0.1);
 }
 
-.hero p {
+.navbar-brand img {
+  height: 40px;
+}
+
+.navbar .nav-link {
+  font-weight: 500;
+  color: var(--policy-text);
+}
+
+.navbar .nav-link.active,
+.navbar .nav-link:hover {
+  color: var(--policy-accent);
+}
+
+.navbar .btn-outline-dark {
+  border-color: var(--policy-accent);
+  color: var(--policy-accent);
+  font-weight: 600;
+  border-radius: 999px;
+}
+.navbar .btn-outline-dark:hover {
+  background-color: var(--policy-accent);
+  color: #fff;
+}
+
+/* --- 4. Hero Section --- */
+.hero-section {
+  padding: 5rem 0;
+  background-color: transparent; /* Nền body đã có gradient */
+}
+
+.hero-headline {
+  font-size: 3.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.hero-subheadline {
   font-size: 1.2rem;
-  color: #334e68;
+  color: var(--policy-muted);
+  margin-bottom: 2.5rem;
+  max-width: 500px;
+}
+
+.hero-image {
+  border-radius: var(--policy-radius-lg); /* Bo góc mới */
+  box-shadow: 0 15px 30px rgba(96, 115, 88, 0.18); /* Đổ bóng mới */
+}
+
+/* --- 5. Thẻ (Cards) - Áp dụng phong cách .surface-card --- */
+.surface-card {
+  background: rgba(255, 255, 255, 0.86);
+  border-radius: var(--policy-radius-lg);
+  border: 1px solid rgba(184, 164, 116, 0.45);
+  box-shadow: 0 20px 50px rgba(96, 115, 88, 0.18);
+  padding: 2.5rem;
+  box-sizing: border-box;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+.surface-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 55px rgba(96, 115, 88, 0.25);
+}
+
+/* --- 5. How it Works --- */
+.how-it-works-section {
+  padding: 5rem 0;
+  background-color: transparent;
+}
+
+.step-card {
+  /* Kế thừa từ .surface-card */
+  background: var(--policy-surface);
+  border-radius: var(--policy-radius-lg);
+  border: 1px solid var(--policy-border);
+  box-shadow: 0 20px 50px rgba(96, 115, 88, 0.18);
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.step-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+}
+
+.step-icon {
+  font-size: 3rem;
+  color: var(--policy-accent);
+  margin-bottom: 1.5rem;
+}
+
+/* --- 6. Features Section --- */
+.features-section {
+  padding: 5rem 0;
+}
+
+.feature-card {
+  /* Kế thừa từ .surface-card */
+  background: var(--policy-surface);
+  border-radius: var(--policy-radius-lg);
+  border: 1px solid var(--policy-border);
+  box-shadow: 0 20px 50px rgba(96, 115, 88, 0.18);
+  text-align: left;
+  padding: 2rem;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  color: var(--policy-accent);
+  margin-bottom: 1.5rem;
+}
+
+/* --- 7. CTA Banner (THEO PHONG CÁCH MỚI) --- */
+.cta-section {
+  padding: 5rem 0;
+  /* Áp dụng phong cách footer từ CSS mới */
+  background: var(--policy-footer-bg);
+  border-top: 1px solid var(--policy-footer-border);
+  border-bottom: 1px solid var(--policy-footer-border);
+  color: var(--policy-text);
+  text-align: center;
+}
+
+.cta-section h2 {
+  color: var(--policy-accent-strong);
+}
+
+.cta-section p {
+  color: var(--policy-muted);
+  font-size: 1.1rem;
+}
+
+.cta-section .btn-accent {
+  /* Làm nút nổi bật hơn */
+  background-color: var(--policy-accent-strong);
+  border-color: var(--policy-accent-strong);
+}
+.cta-section .btn-accent:hover {
+  background-color: var(--policy-accent);
+  border-color: var(--policy-accent);
+}
+
+/* --- 8. Footer (THEO PHONG CÁCH MỚI) --- */
+.footer {
+  padding: 4rem 0 2rem;
+  background-color: transparent; /* Nền body đã có gradient */
+  border-top: 1px solid var(--policy-border);
+}
+
+.footer-brand p {
+  color: var(--policy-muted);
+  max-width: 300px;
+  margin-top: 1rem;
+}
+
+.footer h5 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--policy-accent-strong);
+}
+
+.footer .nav-link {
+  padding: 0.25rem 0;
+  color: var(--policy-muted);
+  text-decoration: none;
+}
+
+.footer .nav-link:hover {
+  color: var(--policy-accent);
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--policy-border);
+  padding-top: 2rem;
+  margin-top: 2rem;
+  color: var(--policy-muted);
 }
