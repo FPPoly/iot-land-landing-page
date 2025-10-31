@@ -3,27 +3,295 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Landing Page - My App</title>
+    <title>IoT Land - Quản lý Nông nghiệp Thông minh</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="/src/shared/global.css" />
     <link rel="stylesheet" href="/src/modules/landing/style.css" />
   </head>
   <body>
-    <header>
-      <h1>Trang Landing Sản phẩm</h1>
-      <nav>
-        <a href="/">Trang chủ</a>
-        <a href="/privacy-policy">Chính sách bảo mật</a>
-        <a href="/support">Hỗ trợ</a>
-      </nav>
+    <header class="navbar navbar-expand-lg sticky-top">
+      <div class="container py-2">
+        <a class="navbar-brand" href="/">
+          <img
+            src="/public/assets/images/iot-logo.png"
+            alt="IoT Land Logo"
+         
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Trang chủ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#how-it-works">Cách hoạt động</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#features">Tính năng</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/support">Hỗ trợ</a>
+            </li>
+            <li class="nav-item ms-lg-3">
+              <a
+                href="httpsDEIN_DOMAIN_HIER/login"
+                class="btn btn-outline-dark"
+                >Đăng nhập</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
     </header>
 
     <main>
-      <section class="hero">
-        <h2>Giới thiệu sản phẩm</h2>
-        <p>Đây là landing page mô phỏng sản phẩm của bạn.</p>
+      <section class="hero-section">
+        <div class="container">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+              <h1 class="hero-headline">Hệ thống Quản lý IoT Land</h1>
+              <p class="hero-subheadline">
+                Giải pháp giám sát cảm biến, lô đất và trang trại thông minh.
+                Xây dựng trên nền tảng Spring Boot & Bootstrap 5, sẵn sàng để
+                triển khai.
+              </p>
+              <div class="d-flex gap-2">
+                <a href="#features" class="btn btn-accent"
+                  >Khám phá Tính năng</a
+                >
+                <a
+                  href="https://placehold.co/1200x600/3F6A43/FFFFFF?text=IoT+Land+Dashboard"
+                  target="_blank"
+                  class="btn btn-primary"
+                  >Xem Dashboard Mẫu</a
+                >
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <img
+                src="https://placehold.co/600x450/3F6A43/FFFFFF?text=IoT+Land+Dashboard+Preview"
+                class="img-fluid hero-image"
+                alt="Bản xem trước Dashboard IoT Land"
+                
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="how-it-works-section" id="how-it-works">
+        <div class="container">
+          <div class="text-center">
+            <h2 class="section-title">Bắt đầu trong 3 bước</h2>
+            <p class="section-subtitle">
+              Triển khai giải pháp giám sát của bạn một cách nhanh chóng và
+              hiệu quả.
+            </p>
+          </div>
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="step-card">
+                <i class="bi bi-cpu step-icon"></i>
+                <h3>1. Cài đặt Cảm biến</h3>
+                <p>
+                  Kết nối các cảm biến IoT của bạn (nhiệt độ, độ ẩm, v.v.) tại
+                  các lô đất cần theo dõi.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="step-card">
+                <i class="bi bi-diagram-3 step-icon"></i>
+                <h3>2. Quản lý Lô đất</h3>
+                <p>
+                  Sử dụng hệ thống để định nghĩa các Khu vực (Domain) và Lô đất
+                  (Land Plot) của bạn.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="step-card">
+                <i class="bi bi-bar-chart-line-fill step-icon"></i>
+                <h3>3. Giám sát Dashboard</h3>
+                <p>
+                  Gán cảm biến vào lô đất và theo dõi dữ liệu thời gian thực
+                  trên Dashboard (sử dụng ApexCharts).
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="features-section" id="features">
+        <div class="container">
+          <div class="text-center">
+            <h2 class="section-title">Tính năng Cốt lõi</h2>
+            <p class="section-subtitle">
+              Các tính năng chính giúp bạn quản lý nông trại thông minh hiệu quả
+              
+            </p>
+          </div>
+          <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+              <div class="feature-card">
+                <i class="bi bi-pie-chart-fill feature-icon"></i>
+                <h3>Dashboard Trực quan</h3>
+                <p>
+                  Trang chủ hiển thị biểu đồ <strong>ApexCharts</strong>, cung
+                  cấp cái nhìn tổng quan tức thì về trạng thái các cảm biến và
+                  hoạt động của hệ thống.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="feature-card">
+                <i class="bi bi-list-task feature-icon"></i>
+                <h3>Quản lý Đa cấp</h3>
+                <p>
+                  Dễ dàng tạo và quản lý <strong>Người dùng (User)</strong>,
+                  <strong>Khu vực (Domain)</strong>, và
+                  <strong>Lô đất (Land Plot)</strong>, cho phép phân quyền và
+                  tổ chức chi tiết.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="feature-card">
+                <i class="bi bi-clock-history feature-icon"></i>
+                <h3>Lịch sử Cảm biến</h3>
+                <p>
+                  Hệ thống tự động lưu trữ <strong>Lịch sử Cảm biến
+                  (SensorHistory)</strong>, cho phép bạn phân tích dữ liệu
+                  theo thời gian và xuất báo cáo.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section text-center">
+        <div class="container">
+          <h2 class="section-title">Sẵn sàng để Triển khai?</h2>
+          <p class="section-subtitle mx-auto">
+            Hệ thống IoT Land đã sẵn sàng. Liên hệ với chúng tôi để được tư
+            vấn hoặc bắt đầu đăng ký tài khoản.
+          </p>
+          <a href="#" class="btn btn-accent btn-lg">Bắt đầu ngay</a>
+        </div>
       </section>
     </main>
 
-    <script src="/src/modules/landing/main.js"></script>
+    <footer class="footer">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4 footer-brand">
+            <img
+              src="/public/assets/images/iot-logo.png"
+              alt="IoT Land Logo"
+              height="40"
+             
+            />
+            <p>
+              Giải pháp Nông nghiệp Thông minh, xây dựng trên Spring Boot,
+              Bootstrap 5 và MyBatis.
+            </p>
+          </div>
+          <div class="col-lg-2 col-md-4 col-6">
+            <h5>Sản phẩm</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2">
+                <a href="#features" class="nav-link">Tính năng</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="#how-it-works" class="nav-link">Cách hoạt động</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link">Bảo mật</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4 col-6">
+            <h5>Công ty</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link">Về chúng tôi</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link">Sự nghiệp</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link">Liên hệ</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4 col-6">
+            <h5>Tài nguyên</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2">
+                <a href="/support" class="nav-link">Hỗ trợ</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="/privacy-policy" class="nav-link">Chính sách</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link">FAQs</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4 col-6">
+            <img
+              src="/public/assets/images/fpt-logo.png"
+              alt="FPT Logo"
+              height="40"
+              
+            />
+          </div>
+        </div>
+        <div
+          class="d-flex justify-content-between footer-bottom align-items-center"
+        >
+          <p>© 2024 IoT Land. All rights reserved.</p>
+          <div>
+            <a href="#" class="nav-link d-inline-block p-2"
+              ><i class="bi bi-twitter-x"></i
+            ></a>
+            <a href="#" class="nav-link d-inline-block p-2"
+              ><i class="bi bi-facebook"></i
+            ></a>
+            <a href="#" class="nav-link d-inline-block p-2"
+              ><i class="bi bi-linkedin"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
